@@ -2,7 +2,7 @@
 
 spl_autoload_register(function (string $class) {
     $namespace = "FluxEco\\MessageLoggerOrbital";
-    $baseDirectory = '/app/src';
+    $baseDirectory = '/opt/flux-eco-message-logger-orbital/app/src';
     loadClassFile($namespace, $class, $baseDirectory);
 });
 

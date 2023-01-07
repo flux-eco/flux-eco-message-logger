@@ -8,3 +8,4 @@ app/*
 !app/autoload.php
 !app/docker_entrypoint.sh
 !docker/
+!examples/

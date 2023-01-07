@@ -1,0 +1,6 @@
+services:
+  flux-eco-message-logger-orbital:
+    ports:
+      - 127.0.0.19:80:9501
+    image: fluxms/flux-eco-message-logger-orbital:v2022-01-07-1
+    restart: always

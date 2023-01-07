@@ -16,7 +16,7 @@ function printBanner {
 
 function startServer {
   echo "start server"
-  php /opt/flux-eco-http-server-sidecar/server.php
+  flux-eco-http-synapse.start
 }
 
 printBanner
