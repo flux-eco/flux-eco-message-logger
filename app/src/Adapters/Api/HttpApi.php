@@ -36,8 +36,8 @@ final readonly class HttpApi
     final public function handleHttpRequest(Http\Request $request, Http\Response $response) : void
     {
         $from = $request->server['remote_addr'];
-        if (array_key_exists('x-eco-orbital', $request->header)) {
-            $from = $request->header['x-eco-orbital'];
+        if (array_key_exists('x-flux-eco-orbital', $request->header)) {
+            $from = $request->header['x-flux-eco-orbital'];
         }
 
         $requestUri = $request->server['request_uri'];
