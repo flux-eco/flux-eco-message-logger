@@ -40,12 +40,17 @@ final readonly class HttpApi
             $from = $request->header['x-flux-eco-orbital'];
         }
 
+        $correlationId  = "";
+        if (array_key_exists('x-flux-eco-correlation-id', $request->header)) {
+            $correlationId = $request->header['x-flux-eco-correlation-id'];
+        }
+
         $requestUri = $request->server['request_uri'];
         $message = $request->rawContent();
 
         $this->service->logMessage(
             Ports\IncomingMessages\LogMessage::new(
-                new DateTimeImmutable(), $from, $requestUri, $message
+                new DateTimeImmutable(), $correlationId, $from, $requestUri, $message
             )
         );
 

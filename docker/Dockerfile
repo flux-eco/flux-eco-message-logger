@@ -1,4 +1,4 @@
-FROM fluxms/flux-eco-biotope:v2022-01-08-1 AS flux-eco-message-logger-orbital
+FROM fluxms/flux-eco-biotope:v2022-01-08-2 AS flux-eco-message-logger-orbital
 
 # |-------------------------------------------------------------------------- \
 # | author martin@fluxlabs.ch

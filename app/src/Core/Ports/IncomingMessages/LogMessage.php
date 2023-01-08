@@ -8,6 +8,7 @@ final readonly class LogMessage
 {
     private function __construct(
         public DateTimeImmutable $dateTimeImmutable,
+        public string $correlationId,
         public string $from,
         public string $address,
         public string $jsonMessage
@@ -17,6 +18,7 @@ final readonly class LogMessage
 
     public static function new(
         DateTimeImmutable $dateTimeImmutable,
+        string $correlationId,
         string $from,
         string $address,
         string $jsonMessage

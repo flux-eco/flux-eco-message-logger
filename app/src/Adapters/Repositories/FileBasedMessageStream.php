@@ -21,14 +21,15 @@ final readonly class FileBasedMessageStream implements MessageStreamRepository
 
     public function handle(LogMessage $logMessage)
     {
-        $this->append($logMessage->dateTimeImmutable, $logMessage->from, $logMessage->address,
+        $this->append($logMessage->dateTimeImmutable, $logMessage->correlationId, $logMessage->from, $logMessage->address,
             $logMessage->jsonMessage);
     }
 
-    public function append(DateTimeImmutable $dateTimeImmutable, string $from, string $address, string $jsonMessage)
+    public function append(DateTimeImmutable $dateTimeImmutable,string $correlationId, string $from, string $address, string $jsonMessage)
     {
         //Something to write to txt log
         $log = "From: " . $from . ' - ' . $dateTimeImmutable->format(DATE_ATOM) . PHP_EOL .
+            "CorrelationId: " . $correlationId . PHP_EOL .
             "Address: " . $address . PHP_EOL .
             "Message: " . $jsonMessage . PHP_EOL .
             "-------------------------" . PHP_EOL;
